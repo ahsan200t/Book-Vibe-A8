@@ -1,12 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveItems } from "../../utility/localStirage";
 
 const BookDetails = () => {
+    const handleWishList=()=>{
+        saveItems(book);
+    }
   const books = useLoaderData();
   const { id } = useParams();
   const book = books.find((book) => book.id == id);
 
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <div className="grid grid-cols-2 gap-8 my-10">
      
         <div className="bg-[#1313130D] p-16 rounded-2xl">
            <img className="w-full" src={book.image} alt="Album" /> 
@@ -51,7 +55,7 @@ const BookDetails = () => {
             </table>
             <div className="mt-5">
               <button className="btn mr-4">Read</button>
-              <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+              <button onClick={handleWishList} className="btn bg-[#50B1C9] text-white">Wishlist</button>
             </div>
           </div>
         </div>
