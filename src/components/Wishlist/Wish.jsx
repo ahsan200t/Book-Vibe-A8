@@ -12,14 +12,14 @@ const Wish = ({book}) => {
   } = book;
   return (
     <div>
-      <div className="card gap-4 card-side bg-base-100 border mb-4 p-4">
+      <div className="p-6 md:flex gap-4 card-side bg-base-100 border mb-4 md:p-4">
         <figure className="bg-[#F3F3F3] p-6 w-[210px] rounded-2xl">
           <img src={image} alt="book image" />
         </figure>
         <div className="card-body">
           <h2 className="text-2xl font-bold">{bookName}</h2>
           <p>By: {author}</p>
-          <div className="flex gap-6">
+          <div className="md:flex gap-6">
             <div className="flex gap-4">
               <h1 className="font-bold">Tag</h1>
               <p className="flex gap-4 text-[#23BE0A]">
