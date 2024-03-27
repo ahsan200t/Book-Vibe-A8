@@ -1,21 +1,41 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    const links=<>
-     <li>
-                <NavLink to='/'>Home</NavLink>
-              </li>
-              
-              <li>
-                <NavLink to='/listed books'>Listed Books</NavLink>
-              </li>
-              <li>
-                <NavLink to='pages to read'>Pages to Read</NavLink>
-              </li>
-              <li>
-                <NavLink to='/latest books'>Latest Books</NavLink>
-              </li>
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#23BE0A] border border-[#23BE0A] font-semibold" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/listed books"  className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#23BE0A] border border-[#23BE0A] font-semibold" : ""
+          }>Listed Books</NavLink>
+      </li>
+      <li>
+        <NavLink to="pages to read"  className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#23BE0A] border border-[#23BE0A] font-semibold" : ""
+          }>Pages to Read</NavLink>
+      </li>
+      <li>
+        <NavLink to="/latest books"  className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "border text-[#23BE0A] font-semibold" : "text-[#131313]"
+          }>Latest Books</NavLink>
+      </li>
+      <li>
+        <NavLink to="/about"  className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "border text-[#23BE0A] font-semibold" : "text-[#131313]"
+          }>About Us</NavLink>
+      </li>
     </>
+  );
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -41,17 +61,13 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             {
-                links
-             }
+              {links}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Book Corner</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-           {links}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-4">
           <a className="btn bg-[#23BE0A] text-white">Sign In</a>

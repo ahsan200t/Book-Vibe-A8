@@ -12,7 +12,7 @@ const Books = () => {
     return (
         <div>
             <div className="text-center">
-                <h1 className="text-4xl font-bold">Books: {books.length}</h1>
+                <h1 className="text-4xl font-bold">Books</h1>
             </div>
             <div className="grid grid-cols-3 gap-8 my-10">
                 {

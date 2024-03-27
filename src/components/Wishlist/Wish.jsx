@@ -1,15 +1,14 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-const Wish = ({ book }) => {
+const Wish = ({book}) => {
   const {
     image,
     bookName,
     author,
     tags,
     yearOfPublishing,
-    publisher,
-    totalPages,
     category,
-    rating,
+    rating
   } = book;
   return (
     <div>
@@ -25,7 +24,7 @@ const Wish = ({ book }) => {
               <h1 className="font-bold">Tag</h1>
               <p className="flex gap-4 text-[#23BE0A]">
                 {
-                    tags.map((tag, index)=><p key={tag.index}>#{tag}</p>)
+                    tags.map((tag)=><p>#{tag}</p>)
                 }
               </p>
               

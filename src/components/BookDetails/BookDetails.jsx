@@ -1,20 +1,20 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveDataToLocalStorage } from "../../utility/localStorage";
 
-
 const BookDetails = () => {
-   const books = useLoaderData();
-   const { id } = useParams();
-   const book = books.find((book) => book.id == id);
+  const books = useLoaderData();
+  const { id } = useParams();
 
+  const book = books.find((item) => item.id === +id);
+  
 
-   const handleWishList = () => {
-    saveDataToLocalStorage(book)
+  const handleWishList = () => {
+   saveDataToLocalStorage(book);
+      
   };
-
-  const handleRead=()=>{
-    saveDataToLocalStorage(book)
-  }
+  const handleRead = () => {
+    saveDataToLocalStorage(book);
+  };
 
   return (
     <div className="grid grid-cols-2 gap-8 my-10">
@@ -39,7 +39,7 @@ const BookDetails = () => {
           <div className="flex gap-5">
             <h1 className="font-bold">Tag</h1>
             <div className="flex gap-6 text-[#23BE0A]">
-              {book.tags.map((tag, idx) => (
+              {book.tags.map((tag) => (
                 <p key={tag.idx}>#{tag}</p>
               ))}
             </div>
@@ -65,7 +65,9 @@ const BookDetails = () => {
               </tr>
             </table>
             <div className="mt-5">
-              <button onClick={handleRead} className="btn mr-4">Read</button>
+              <button onClick={handleRead} className="btn mr-4">
+                Read
+              </button>
               <button
                 onClick={handleWishList}
                 className="btn bg-[#50B1C9] text-white"
