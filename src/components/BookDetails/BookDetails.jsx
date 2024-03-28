@@ -1,7 +1,11 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveDataToLocalStorage } from "../../utility/localStorage";
+import { saveDataToLocalStorage, saveReadDataToLocalStorage } from "../../utility/localStorage";
+
+
+
 
 const BookDetails = () => {
+
   const books = useLoaderData();
   const { id } = useParams();
 
@@ -10,11 +14,16 @@ const BookDetails = () => {
 
   const handleWishList = () => {
    saveDataToLocalStorage(book);
+   
       
   };
   const handleRead = () => {
-    saveDataToLocalStorage(book);
+    saveReadDataToLocalStorage(book);
+   
+    
   };
+
+
 
   return (
     <div className="m-5 md:grid grid-cols-2 gap-8 my-10">
@@ -77,8 +86,8 @@ const BookDetails = () => {
             </div>
           </div>
         </div>
-        <div></div>
       </div>
+      
     </div>
   );
 };

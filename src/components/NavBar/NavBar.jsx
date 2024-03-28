@@ -25,9 +25,9 @@ const NavBar = () => {
           }>Pages to Read</NavLink>
       </li>
       <li>
-        <NavLink to="/latest books"  className={({ isActive, isPending }) =>
+        <NavLink to="/coming books"  className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "border text-[#23BE0A] font-semibold" : "text-[#131313]"
-          }>Latest Books</NavLink>
+          }>Upcoming Books</NavLink>
       </li>
       <li>
         <NavLink to="/about"  className={({ isActive, isPending }) =>

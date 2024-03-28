@@ -4,7 +4,7 @@ const AboutUs = () => {
     return (
         <div className="bg-gray-100 p-10 rounded-2xl">
          <div>
-         <h1 className="text-4xl font-bold text-center">Welcome to <span className="text-[#0088FE]">Book Corner!</span></h1> 
+         <h1 className="text-4xl font-bold text-center">Welcome to <span className="text-[#23BE0A] font-extrabold">Book Corner!</span></h1> 
           <p className="text-[#131313CC] mt-5">We are passionate about books and the magic they bring into our lives. Nestled in the heart of Pekua/Cox,s Bazar, our cozy bookstore has been a beloved destination for book lovers since 2015. With shelves filled with treasures waiting to be discovered and a welcoming atmosphere that invites you to stay awhile, we strive to create a haven for bibliophiles of all ages</p> 
          </div>
          <div>
