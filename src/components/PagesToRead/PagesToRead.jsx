@@ -2,20 +2,18 @@
 import { useEffect, useState } from "react";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
 
-
 const PagesToRead = () => {
+  const [readData, setReadData] = useState([]);
 
-  const [readData, setReadData]=useState([]);
+  useEffect(() => {
+    const getReadDefaultData =
+      JSON.parse(localStorage.getItem("readBooks")) || [];
+    setReadData(getReadDefaultData);
+  }, []);
 
-  useEffect(()=>{
-    const getReadDefaultData =JSON.parse(localStorage.getItem("readBooks")) || [];  
-    setReadData(getReadDefaultData)
-  },[])
-
-  const {bookName, totalPages}=readData;
- 
-  
-  
+  {
+    readData.map((book) => book.id == setReadData.id);
+  }
 
   const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
   const getPath = (x, y, width, height) => {
@@ -35,12 +33,10 @@ const PagesToRead = () => {
   };
   const data = [
     {
-    name: "name",
+      name:"name" ,
       uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    }
-   
+     
+    },
   ];
 
   return (
@@ -57,10 +53,10 @@ const PagesToRead = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey= 'name' />
         <YAxis />
         <Bar
-          dataKey="uv"
+          dataKey='uv'
           fill="#8884d8"
           shape={<TriangleBar />}
           label={{ position: "top" }}
