@@ -1,7 +1,11 @@
 /* eslint-disable react/jsx-key */
+
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const Wish = ({book}) => {
   const {
+    id,
     image,
     bookName,
     author,
@@ -59,7 +63,7 @@ const Wish = ({book}) => {
           <div className="flex justify-center items-center gap-3">
             <p className="bg-[#328EFF26] p-3 text-center rounded-full text-[#328EFF]">Category: {category}</p>
             <p className="bg-[#FFAC3326] p-3 rounded-full text-center text-[#FFAC33]">Rating: {rating}</p>
-            <button className="btn bg-[#23BE0A] rounded-full text-white">View Details</button>
+            <Link to={`/book-details/${id}`}><button className="btn bg-[#23BE0A] rounded-full text-white">View Details</button></Link>
           </div>
         </div>
       </div>

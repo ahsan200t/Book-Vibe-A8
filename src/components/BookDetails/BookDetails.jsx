@@ -1,30 +1,27 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveDataToLocalStorage, saveReadDataToLocalStorage } from "../../utility/localStorage";
+import {
+  saveDataToLocalStorage,
+  saveReadDataToLocalStorage,
+} from "../../utility/localStorage";
+import { ToastContainer, toast } from "react-toastify";
 
-
-
+import "react-toastify/dist/ReactToastify.css";
 
 const BookDetails = () => {
-
   const books = useLoaderData();
   const { id } = useParams();
 
-  const book = books.find((item) => item.id === +id);
-  
+  const book = books.find((item) => item.id == id);
 
   const handleWishList = () => {
-   saveDataToLocalStorage(book);
-   
-      
+    saveDataToLocalStorage(book);
+    
   };
   const handleRead = () => {
     saveReadDataToLocalStorage(book);
-   
     
   };
-
-
-
+ 
   return (
     <div className="m-5 md:grid grid-cols-2 gap-8 my-10">
       <div className="bg-[#1313130D] p-16 rounded-2xl">
@@ -87,7 +84,7 @@ const BookDetails = () => {
           </div>
         </div>
       </div>
-      
+      <ToastContainer />
     </div>
   );
 };
